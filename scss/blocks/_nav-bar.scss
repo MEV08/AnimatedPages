@@ -1,0 +1,38 @@
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    opacity: 1;
+    clip-path: circle(50px at 100% -10%);
+    -webkit-clip-path: circle(50px at 100% -10%);
+}
+.nav-links {
+    &__item {
+        padding: 3rem 0;
+    }
+}
+.nav-link {
+    display: block;
+    font-size: 3rem;
+    text-decoration: none;
+    flex-basis: 30rem;
+    color: $black;
+}
+.contact {
+    flex-basis: 30rem;
+    &-title {
+        padding: 2rem 0;
+        font-size: 3rem;
+    }
+    &-txt {
+        font-size: 1.5rem;
+        line-height: 2rem;
+    }
+}

@@ -1,0 +1,37 @@
+@import "reset";
+@import "mixins";
+@import "vars";
+
+*, 
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+i, svg {
+    pointer-events: none;
+}
+// font-family: , cursive;
+body {
+    background: $main-bg;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+.logo{ 
+    color: $white;
+    font-family: 'Abril Fatface';
+}
+.scrollmagic-pin-spacer {
+    position: static !important;
+}
+.hide {
+    overflow: hidden
+}
+// Blocks
+@import 'blocks/nav';
+@import 'blocks/slides';
+@import 'blocks/nav-bar';
+@import 'blocks/reveal';
+@import 'blocks/fashion';

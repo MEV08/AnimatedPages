@@ -18,6 +18,10 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     overflow-x: hidden;
+    position: relative;
+}
+main {
+    position: absolute;
 }
 .logo{ 
     color: $white;

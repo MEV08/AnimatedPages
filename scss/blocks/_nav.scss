@@ -24,4 +24,8 @@
 }
 .logo {
     font-size: 1.4rem;
+    outline: none;
+    &:focus {
+        outline: none !important;
+    }
 }

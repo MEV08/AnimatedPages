@@ -27,20 +27,43 @@
     position: absolute;
     top: 0;
     right: 0;
+    @include breakpoint($tablet) {
+        height: 60vh;
+        object-position: top;
+    }
 }
 .fashion-text {
     flex: 1;
     position: relative;
     flex-basis: 25rem;
+    @include breakpoint($big-screen) {
+        // flex: 0.5;
+    }
 }
 .fashion-text p {
     margin-bottom: 12rem;
     padding: 2rem 2rem 0 0;
     font-size: 2rem;
+    @include breakpoint($big-screen) {
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+    @include breakpoint($tablet) {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
 }
 .fashion-text__title {
     padding: 5rem 0;
     font-size: 6rem;
+    @include breakpoint($big-screen) {
+        padding: 2rem 0;
+        font-size: 4rem;
+    }
+    @include breakpoint($tablet) {
+        padding: 1rem 0;
+        font-size: 2rem;
+    }
 }
 .title1 {
     color: rgb(255, 139, 93);
@@ -58,4 +81,19 @@
     bottom: 5%;
     color: $white;
     opacity: 0.5;
+    @include breakpoint($big-screen) {
+        font-size: 7rem;
+    }
+    @include breakpoint($tablet) {
+        bottom: 15%;
+        left: 0;
+    }
+}
+.detail-slide {
+    @include breakpoint($big-screen) {
+        margin: 0;
+        padding: 0 15px;
+        width: 100%;
+        text-align: center;
+    }
 }

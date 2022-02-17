@@ -21,7 +21,6 @@ function animateSlides() {
         slideTl.fromTo(revealImg, {x: '0%'}, {x:'100%'});
         slideTl.fromTo(img, {scale: 2, opacity: 0}, {scale: 1, opacity: 1}, '-=1');
         slideTl.fromTo(revealTxt, {x: '0%'}, {x: '100%'}, '-=0.75');
-        slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'}, '-=0.4');
         // scene creation
         slideScene = new ScrollMagic.Scene({
             triggerElement: slide,
@@ -29,11 +28,11 @@ function animateSlides() {
             reverse: false
         })
             .setTween(slideTl)
-            .addIndicators({
-                colorStart: 'white', 
-                colorTrigger: 'white', 
-                name: 'slide'
-            })
+            // .addIndicators({
+            //     colorStart: 'white', 
+            //     colorTrigger: 'white', 
+            //     name: 'slide'
+            // })
             .addTo(controller);
         // another animatiom
         const pageTl = gsap.timeline();
@@ -47,15 +46,16 @@ function animateSlides() {
             duration: '100%',
             triggerHook: 0
         })
-            .addIndicators({
-                colorStart: 'white', 
-                colorTrigger: 'white', 
-                name: 'page',
-                indent: 200
-            })
             .setPin(slide, {pushFollowers: false})
             .setTween(pageTl)
             .addTo(controller)
+            .addIndicators({
+                colorStart: 'inherit', 
+                colorTrigger: 'inherit', 
+                colorEnd: 'inherit',
+                name: 'page',
+                indent: 200
+            })
     });
 }
 function cursor(e) {
@@ -118,7 +118,6 @@ barba.init({
             beforeEnter() {
                 logo.href = '../index.html';
                 detailAnimation();
-                gsap.fromTo('.nav-header', 1, {y: '100%'}, {y: '0%', ease: 'power2.inOut'});
             },
             beforeLeave() {
                 controller.destroy();
@@ -159,7 +158,8 @@ barba.init({
                     1, 
                     {opacity: 0}, 
                     {opacity: 1}
-            );
+                );
+                tl.fromTo('.nav-header', 1, {y: '-100%'}, {y: '0%', ease: 'power2.inOut'}, "-=1.5");
             }
         }
     ]
@@ -184,8 +184,9 @@ function detailAnimation() {
             .setPin(slide, {pushFollowers: false})
             .setTween(slideTl)
             .addIndicators({
-                colorStart: 'white', 
-                colorTrigger: 'white', 
+                colorStart: 'inherit', 
+                colorTrigger: 'inherit',
+                colorEnd: 'inherit', 
                 name: 'DetailScene',
                 indent: 200
             })
@@ -197,3 +198,4 @@ burger.addEventListener('click', navToggle);
 window.addEventListener('mousemove', cursor);
 window.addEventListener('mouseover', activeCursor);
 
+// slideTl.fromTo(nav, {y: '-100%'}, {y: '0%'}, '-=0.4');

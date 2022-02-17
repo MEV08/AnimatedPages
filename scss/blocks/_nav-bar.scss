@@ -12,10 +12,20 @@
     opacity: 1;
     clip-path: circle(50px at 100% -10%);
     -webkit-clip-path: circle(50px at 100% -10%);
+    @include breakpoint($big-screen) {
+        display: block;
+    }
 }
 .nav-links {
     &__item {
         padding: 3rem 0;
+        @include breakpoint($big-screen) {
+            padding: 1.5rem 0;
+        }
+    }
+    @include breakpoint($big-screen) {
+        padding-top: 100px;
+        text-align: center;
     }
 }
 .nav-link {
@@ -24,15 +34,30 @@
     text-decoration: none;
     flex-basis: 30rem;
     color: $black;
+    @include breakpoint($big-screen) {
+        font-size: 2rem;
+    }
 }
 .contact {
     flex-basis: 30rem;
     &-title {
         padding: 2rem 0;
         font-size: 3rem;
+        @include breakpoint($big-screen) {
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
     }
     &-txt {
         font-size: 1.5rem;
         line-height: 2rem;
+        @include breakpoint($big-screen) {
+            font-size: 1rem;
+            line-height: 1rem;
+        }
+    }
+    @include breakpoint($big-screen) {
+        padding: 0 15px;
+        text-align: center;
     }
 }

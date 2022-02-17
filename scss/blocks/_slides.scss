@@ -7,6 +7,14 @@
     align-items: center;
     color: $white;
     background: $main-bg;
+    @include breakpoint($big-screen) {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    @include breakpoint($tablet) {
+        padding: 0 15px;
+    }
 }
 .hero-description { 
     padding-left: 5rem;
@@ -21,6 +29,15 @@
         padding: 3rem 0;
         font-size: 1.5rem;
         color: $txt;
+        @include breakpoint($big-screen) {
+            padding: 1.6rem 0.8rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            text-align: center;
+        }
+    }
+    @include breakpoint($big-screen) {
+        padding: 0;
     }
 }
 .title h2 {
@@ -28,6 +45,10 @@
     height: 100%;
     font-family: "Abril Fatface";
     font-size: 4rem;
+    @include breakpoint($big-screen) {
+        padding: 1rem 0rem;
+        font-size: 1.6rem;
+    }
 }
 .hero-img {
     position: relative;
@@ -39,6 +60,9 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    @include breakpoint($big-screen) {
+        max-width: 600px;
+    }
 }
 .fashion-span {
     color: rgb(255, 139, 93);
@@ -59,4 +83,8 @@
     text-decoration: none;
     align-self: flex-start;
     cursor: pointer;
+    @include breakpoint($big-screen) {
+        width: 50%;
+        margin: 0 auto;
+    }
 }

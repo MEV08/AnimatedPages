@@ -49,13 +49,13 @@ function animateSlides() {
             .setPin(slide, {pushFollowers: false})
             .setTween(pageTl)
             .addTo(controller)
-            .addIndicators({
-                colorStart: 'inherit', 
-                colorTrigger: 'inherit', 
-                colorEnd: 'inherit',
-                name: 'page',
-                indent: 200
-            })
+            // .addIndicators({
+            //     colorStart: 'inherit', 
+            //     colorTrigger: 'inherit', 
+            //     colorEnd: 'inherit',
+            //     name: 'page',
+            //     indent: 200
+            // })
     });
 }
 function cursor(e) {
@@ -183,13 +183,13 @@ function detailAnimation() {
         })
             .setPin(slide, {pushFollowers: false})
             .setTween(slideTl)
-            .addIndicators({
-                colorStart: 'inherit', 
-                colorTrigger: 'inherit',
-                colorEnd: 'inherit', 
-                name: 'DetailScene',
-                indent: 200
-            })
+            // .addIndicators({
+            //     colorStart: 'inherit', 
+            //     colorTrigger: 'inherit',
+            //     colorEnd: 'inherit', 
+            //     name: 'DetailScene',
+            //     indent: 200
+            // })
             .addTo(controller);
     });
 }
